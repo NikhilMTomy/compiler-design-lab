@@ -16,3 +16,12 @@ exp2_1: experiment_2/1_ending_with_001/ending_with_001.cpp
 		experiment_2/1_ending_with_001/ending_with_001.cpp \
 		experiment_2/common.cpp \
 		experiment_2/State.cpp
+
+exp2_2: experiment_2/2_containing_1100/containing_1100.cpp
+	g++ \
+		-o experiment_2/2_containing_1100/containing_1100.out \
+		-I experiment_2/include \
+		-std=c++17 \
+		experiment_2/2_containing_1100/containing_1100.cpp \
+		experiment_2/common.cpp \
+		experiment_2/State.cpp
