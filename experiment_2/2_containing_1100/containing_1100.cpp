@@ -5,21 +5,19 @@
 #include <State.h>
 #include <common.h>
 
-const std::vector<char> alphabet = {'0', '1', EPSILON};
+const std::vector<char> alphabet = {'0', '1'};
 std::vector<State> states;
 
 void initializeState(std::vector<State> &states) {
 	states[0].addTransitions('0', &states[0]);
+	states[0].addTransitions('1', &states[0]);
 	states[0].addTransitions('1', &states[1]);
 
-	states[1].addTransitions('0', &states[0]);
 	states[1].addTransitions('1', &states[2]);
 
 	states[2].addTransitions('0', &states[3]);
-	states[2].addTransitions('1', &states[2]);
 
 	states[3].addTransitions('0', &states[4]);
-	states[3].addTransitions('1', &states[1]);
 
 	states[4].addTransitions('0', &states[4]);
 	states[4].addTransitions('1', &states[4]);

@@ -5,7 +5,7 @@
 #include <State.h>
 #include <common.h>
 
-const std::vector<char> alphabet = {'0', '1', EPSILON};
+const std::vector<char> alphabet = {'0', '1'};
 std::vector<State> states;
 
 void initializeState(std::vector<State> &states) {
