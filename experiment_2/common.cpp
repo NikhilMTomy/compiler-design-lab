@@ -1,7 +1,7 @@
 #include <common.h>
 
 void printTransitionTable(const std::vector<char> &alphabet, std::vector<State> &states) {
-	int maxLen = 45;
+	int maxLen = (alphabet.size() * 11) + 12;
 	std::cout << "\nTransition Table\n" << std::left;
 
 
@@ -19,7 +19,7 @@ void printTransitionTable(const std::vector<char> &alphabet, std::vector<State> 
 
 
 	for (State &state : states) {
-		std::cout << "|" << std::setw(10) << state.getName() << "|";
+		std::cout << "|" << std::setw(10) << std::string("q") + std::string(state.getName()) << "|";
 
 		for (const char &c : alphabet) {
 			std::vector<State*> nextStates = state.nextStates(c);
