@@ -9,17 +9,13 @@ const std::vector<char> alphabet = {'0', '1', EPSILON};
 std::vector<State> states;
 
 void initializeState(std::vector<State> &states) {
+	states[0].addTransitions('0', &states[0]);
 	states[0].addTransitions('0', &states[1]);
 	states[0].addTransitions('1', &states[0]);
 
 	states[1].addTransitions('0', &states[2]);
-	states[1].addTransitions('1', &states[0]);
 
-	states[2].addTransitions('0', &states[2]);
 	states[2].addTransitions('1', &states[3]);
-
-	states[3].addTransitions('0', &states[1]);
-	states[3].addTransitions('1', &states[0]);
 }
 
 int main() {
